@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fonctionnalités · Presmile</title>
+<meta name="description" content="Tout ce que fait Presmile, en détail : réglé pour ton métier, demandes, devis automatiques, emails, signature en ligne, espace client, déroulé du jour J, factures, facturation électronique, relances, planning, matériel, livreurs et appli livreur, finances, mobile.">
+<meta name="theme-color" content="#F4CB3A">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/InstrumentSans-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/BricolageGrotesque-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="has-sticky">
+
+
+<!-- Icônes (tracés type Lucide) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24"><path d="M12 22v-5"/><path d="M9 8V2M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 13h4M10 17h4"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.4 3.6a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M8 2v4M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></symbol>
+  <symbol id="i-euro" viewBox="0 0 24 24"><path d="M4 10h12M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></symbol>
+</svg>
+
+<header class="site-header" id="top">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Presmile, accueil"><img src="assets/logo-presmile.svg" alt="Presmile" width="112" height="34"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="fonctionnalites.html" class="active" aria-current="page">Fonctionnalités</a>
+      <a href="connecter-ton-site.html">Relier ton site</a>
+      <a href="facturation-electronique.html">Facturation électronique</a>
+      <a href="tarif.html">Tarif</a>
+      <a href="sur-ton-telephone.html">Sur ton téléphone</a>
+      <a href="questions.html">Questions</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-ghost btn-sm" href="https://app.presmile.fr/" data-app-link>Se connecter</a>
+      <a class="btn btn-primary btn-sm" href="lancement.html">Être prévenu</a>
+    </div>
+    <button class="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" onclick="toggleMenu(this)"><svg class="ic"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">Fonctionnalités</span>
+      <h1 style="font-size: clamp(34px, 4.6vw, 54px);">Tout ce que fait Presmile</h1>
+      <p>Pour que tu saches exactement à quoi t'attendre. Tout est inclus dans l'abonnement.</p>
+    </div>
+  </div>
+
+  <!-- ============ FONCTIONNALITÉS EN DÉTAIL ============ -->
+  <section id="fonctionnalites" style="padding-top: 40px;">
+    <div class="wrap">
+
+      <nav class="toc" aria-label="Fonctionnalités">
+        <a href="#f-metier">Ton métier</a><a href="#f-demandes">Demandes</a><a href="#f-devis">Devis</a><a href="#f-emails">Emails</a><a href="#f-signature">Signature</a>
+        <a href="#f-client">Espace client</a><a href="#f-jourj">Jour J</a><a href="#f-factures">Factures</a><a href="#f-efacture">Facture électronique</a><a href="#f-relances">Relances</a><a href="#f-planning">Planning</a>
+        <a href="#f-materiel">Matériel</a><a href="#f-livreurs">Livreurs</a><a href="#f-finances">Finances</a><a href="#f-mobile">Mobile</a><a href="#f-reglages">Tes documents</a>
+      </nav>
+
+      <div class="module" id="f-metier">
+        <div class="module-head"><span class="ic-tile"><svg class="ic"><use href="#i-briefcase"/></svg></span><h3>Réglé pour ton métier</h3><p>Tu choisis ton métier, Presmile prépare le reste.</p></div>
+        <div class="module-body">
+          <ul class="checks">
+            <li><span><b>Photobooth, photographe, vidéaste, DJ ou musicien, traiteur, décorateur ou fleuriste, wedding planner</b>… ou tout autre métier de l'événement.</span></li>
+            <li><span><b>Un catalogue de départ</b> avec des formules et des options typiques de ton métier, à tes prix.</span></li>
+            <li><span><b>Le bon questionnaire client</b> : texte du modèle photo pour un photobooth, photos de groupe pour un photographe, morceaux de la première danse pour un DJ, allergies pour un traiteur…</span></li>
+            <li><span><b>Un déroulé type du jour J</b> : les étapes de ton métier, prêtes à recevoir les horaires de ton client.</span></li>
+          </ul>
+          <div class="good-to-know"><b>À savoir :</b> tout reste modifiable. Tu ajoutes, retires ou réécris les questions, les formules et les étapes comme tu veux.</div>
+        </div>
+      </div>
+
+      <div class="module" id="f-demandes">
+        <div class="module-head"><span class="ic-tile"><svg class="ic"><use href="#i-inbox"/></svg></span><h3>Demandes de devis</h3><p>Toutes tes demandes au même endroit, déjà transformées en devis.</p></div>
+        <div class="module-body">
+          <ul class="checks">
+            <li><span><b>Formulaire relié à ton site</b> ou à Tally, Typeform, Zapier, Make : client, événement et devis créés automatiquement.</span></li>
+            <li><span><b>Assistant de saisie</b> : colle une demande reçue par téléphone, email ou réseaux sociaux, ou joins-lui une capture d'écran, une photo ou un PDF : il en fait un devis.</span></li>
+            <li><span><b>Onglet Demandes</b> : les nouvelles demandes à traiter, avec leur montant, en un coup d'œil.</span></li>
+            <li><span><b>Refuser proprement</b> : un clic prépare un email d'excuse poli et libère ta date.</span></li>
+          </ul>
+          <a class="more" href="connecter-ton-site.html">Relier ton formulaire, pas à pas <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <div class="module" id="f-devis">
+        <div class="module-head"><span class="ic-tile"><svg class="ic"><use href="#i-file"/></svg></span><h3>Devis</h3><p>Des devis professionnels, justes et complets, en deux minutes.</p></div>
+        <div class="module-body">
+          <ul class="checks">
+            <li><span><b>Ton catalogue</b> de formules et d'options, avec leurs détails : tu composes un devis en quelques clics.</span></li>
+            <li><span><b>Livraison calculée</b> selon la distance entre ton adresse et le lieu de l'événement.</span></li>
+            <li><span><b>Remises par ligne, TVA ou franchise</b> (auto-entrepreneur), acompte en pourcentage ou en montant.</span></li>
+            <li><span><b>Assistant IA</b> : « enlève la livraison », « passe le prix à 350 € », il modifie pour toi n'importe quel devis pas encore signé.</span></li>
+            <li><span><b>PDF à ton nom</b> avec ton logo, les mentions obligatoires, ta durée de validité, tes CGV annexées.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module" id="f-emails">
+        <div class="module-head"><span class="ic-tile"><svg class="ic"><use href="#i-mail"/></svg></span><h3>Emails et boîte mail</h3><p>Les emails s'écrivent seuls, et c'est toujours toi qui envoies.</p></div>
+        <div class="module-body">
+          <ul class="checks">
+            <li><span><b>Relie ta boîte mail</b> (Gmail ou autre) : devis, factures, relances et refus y arrivent en brouillon, avec les pièces jointes.</span></li>
+            <li><span><b>Rédigés pour toi</b>, au bon ton et dans un style naturel : vouvoiement ou tutoiement, et la bonne formule d'appel selon ce que tu sais du client.</span></li>
+            <li><span><b>Ton RIB joint automatiquement</b> aux devis et aux factures, si tu l'as déposé.</span></li>
+            <li><span><b>Envoi repéré tout seul</b> : Presmile voit quand tu as envoyé le devis et lance le compte à rebours des relances.</span></li>
+          </ul>
+          <div class="good-to-know"><b>À savoir :</b> rien ne part sans ton clic sur « Envoyer ». Sans boîte reliée, tu copies le texte et tu joins le PDF toi-même.</div>
+        </div>
+      </div>
+
+      <div class="module" id="f-signature">
+        <div class="module-head"><span class="ic-tile"><svg class="ic"><use href="#i-pen"/></svg></span><h3>Signature en ligne</h3><p>Ton client signe en trente secondes, depuis son téléphone.</p></div>
+        <div class="module-body">
+          <ul class="checks">
+            <li><span><b>Lien personnel</b> ajouté automatiquement au mail du devis et aux relances.</span></li>
+            <li><span><b>Nom tapé ou signature dessinée</b>, case « Bon pour accord », CGV à lire sur la même page.</span></li>
+            <li><span><b>Preuve conservée</b> : date et heure, adresse IP, email du client, empreinte du document signé, certificat de signature.</span></li>
+            <li><span><b>Tout suit</b> : devis accepté et figé, événement confirmé, notification sur ton téléphone. Le lien de signature et le PDF signé restent sur la fiche de l'événement.</span></li>
+          </ul>
+          <div class="good-to-know"><b>À savoir :</b> c'est une signature électronique simple au sens du règlement européen eIDAS, adaptée aux devis de prestation.</div>
+        </div>
+      </div>
+
+      <div class="module" id="f-client">
+        <div class="module-head"><span class="ic-tile"><svg class="ic"><use href="#i-user"/></svg></span><h3>Espace client et questionnaire</h3><p>Ton client trouve tout au même endroit, et te donne ce qu'il te faut sans vingt messages.</p></div>
+        <div class="module-body">
+          <ul class="checks">
+            <li><span><b>Un lien par événement</b>, sans compte ni mot de passe : questionnaire, devis à signer, factures, documents.</span></li>
+            <li><span><b>Questionnaire avant l'événement</b> : contact sur place, accès au lieu, nombre d'invités, horaires, et les questions de ton métier. L'email est préparé tout seul 30 jours avant.</span></li>
+            <li><span><b>Réponses reprises</b> sur l'événement et sur la fiche de tes livreurs : plus rien à recopier.</span></li>
+            <li><span><b>Documents partagés dans les deux sens</b> : tu lui envoies un plan ou un aperçu, il te dépose son logo ou ses inspirations.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module" id="f-jourj">
+        <div class="module-head"><span class="ic-tile"><svg class="ic"><use href="#i-clock"/></svg></span><h3>Déroulé du jour J</h3><p>Qui fait quoi, et à quelle heure.</p></div>
+        <div class="module-body">
+          <ul class="checks">
+            <li><span><b>Heure par heure</b> : installation, cérémonie, vin d'honneur, dîner, fin de soirée, démontage… avec une précision par étape.</span></li>
+            <li><span><b>Rempli par ton client</b> : les horaires qu'il donne dans le questionnaire se placent tout seuls. Une heure que tu as corrigée n'est jamais écrasée.</span></li>
+            <li><span><b>Ton déroulé type</b> : renomme, ajoute ou retire des étapes une fois pour toutes, il sert de base à chaque nouvel événement.</span></li>
+            <li><span><b>Sur la fiche de tes livreurs</b>, et dans l'espace client si tu choisis de le partager.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module" id="f-factures">
+        <div class="module-head"><span class="ic-tile"><svg class="ic"><use href="#i-euro"/></svg></span><h3>Factures, acomptes, avoirs</h3><p>Des factures justes du premier coup, et en règle.</p></div>
+        <div class="module-body">
+          <ul class="checks">
+            <li><span><b>Facture d'acompte en un clic</b> depuis le devis signé, puis facture de solde qui déduit l'acompte. Acompte et solde restent reliés à leur devis.</span></li>
+            <li><span><b>L'assistant crée aussi tes factures</b> : « facture l'acompte de 30 % du mariage Dupont », « facture comptant 450 € à un nouveau client »… Il vérifie tout, te montre le récapitulatif, et c'est toi qui valides.</span></li>
+            <li><span><b>Devis fait ailleurs ?</b> Tu factures quand même depuis Presmile, et un acompte déjà facturé hors de Presmile est déduit du solde.</span></li>
+            <li><span><b>Mentions obligatoires contrôlées</b> avant la validation : Presmile te dit ce qui manque.</span></li>
+            <li><span><b>Numérotation continue</b>, facture non modifiable une fois validée, avoir pour corriger.</span></li>
+            <li><span><b>Clients particuliers et professionnels</b> : droit de rétractation, indemnité de retard, SIREN, chaque cas est géré.</span></li>
+            <li><span><b>Export</b> de toutes tes factures validées en un fichier, à garder 10 ans. Recherche qui pardonne les fautes dans « Mes factures ».</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module" id="f-efacture">
+        <div class="module-head"><span class="ic-tile"><svg class="ic"><use href="#i-shield"/></svg></span><h3>Facturation électronique</h3><p>La réforme arrive : avec Presmile, tu n'as rien à changer.</p></div>
+        <div class="module-body">
+          <ul class="checks">
+            <li><span><b>Format Factur-X</b> pour chaque facture, acompte et avoir, dès aujourd'hui.</span></li>
+            <li><span><b>Transmission automatique</b> de tes factures à tes clients professionnels via notre plateforme agréée partenaire.</span></li>
+            <li><span><b>Suivi des statuts</b> : reçue, approuvée, refusée, encaissée. Tu es prévenu en cas de refus.</span></li>
+            <li><span><b>Tes clients particuliers et étrangers</b> : ils reçoivent toujours ta facture par email.</span></li>
+          </ul>
+          <div class="good-to-know"><b>À savoir :</b> l'option s'active dans Paramètres. La plateforme agréée vérifie une fois ton entreprise : <b>2 € HT, une seule fois</b>. Les envois de factures sont ensuite inclus. <a class="more" href="facturation-electronique.html">En savoir plus <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </div>
+
+      <div class="module" id="f-relances">
+        <div class="module-head"><span class="ic-tile"><svg class="ic"><use href="#i-repeat"/></svg></span><h3>Relances</h3><p>Plus aucun devis oublié, plus aucune facture qui traîne.</p></div>
+        <div class="module-body">
+          <ul class="checks">
+            <li><span><b>Devis sans réponse</b> depuis 7 jours et <b>factures en retard</b> repérés automatiquement.</span></li>
+            <li><span><b>Email de relance rédigé</b> et prêt dans ta boîte mail, avec le lien de signature.</span></li>
+            <li><span><b>Pas de relance en double</b> : une semaine d'attente entre deux relances d'un même client.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module" id="f-planning">
+        <div class="module-head"><span class="ic-tile"><svg class="ic"><use href="#i-cal"/></svg></span><h3>Planning et Google Agenda</h3><p>Ton agenda à jour, où que tu le regardes.</p></div>
+        <div class="module-body">
+          <ul class="checks">
+            <li><span><b>Calendrier</b> de tous tes événements, avec leur statut : prospect, option, confirmé. Un salon ou un mariage sur tout un week-end ? Un événement peut durer plusieurs jours.</span></li>
+            <li><span><b>Fiche événement claire</b> : rubriques repliables et note interne, que ni ton client ni tes livreurs ne voient.</span></li>
+            <li><span><b>Synchronisation avec Google Agenda</b>, dans les deux sens, sans doublons. Si Google demande de te reconnecter, un clic suffit.</span></li>
+            <li><span><b>Tableau de bord</b> : ce qui a besoin de toi aujourd'hui et les événements des 30 prochains jours.</span></li>
+            <li><span><b>Recherche qui pardonne les fautes</b> : retrouve un devis ou un événement avec un bout de nom. En créant un événement, trouve ton client par son nom, son email ou quelques chiffres de son téléphone, ou crée-le à la volée.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module" id="f-materiel">
+        <div class="module-head"><span class="ic-tile"><svg class="ic"><use href="#i-box"/></svg></span><h3>Matériel</h3><p>Fini les doubles réservations.</p></div>
+        <div class="module-body">
+          <ul class="checks">
+            <li><span><b>Tes machines et kits</b> assignés à chaque événement.</span></li>
+            <li><span><b>Alerte</b> si un matériel est déjà pris le même jour, avant que ça devienne un problème.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module" id="f-livreurs">
+        <div class="module-head"><span class="ic-tile"><svg class="ic"><use href="#i-truck"/></svg></span><h3>Livreurs et appli Presmile Livreur</h3><p>Ton équipe sait tout, sans que tu décroches ton téléphone.</p></div>
+        <div class="module-body">
+          <ul class="checks">
+            <li><span><b>Un lien personnel par livreur</b>, sans compte ni mot de passe, envoyé par WhatsApp, SMS ou email.</span></li>
+            <li><span><b>Sa propre appli, Presmile Livreur</b> : il l'installe sur son écran d'accueil (iPhone ou Android) avec sa propre icône, en suivant le petit tutoriel affiché sur sa page.</span></li>
+            <li><span><b>Toutes ses missions</b> : horaires d'installation et de démontage, adresse avec Waze, Google Maps ou Plans, client et contact sur place, matériel, prestations, nombre de tirages papier, consignes, déroulé du jour J, documents.</span></li>
+            <li><span><b>Proposer à tous tes livreurs</b> : un clic envoie la mission à toute l'équipe, avec la date, les horaires et l'adresse. Le premier qui accepte la prend, et tu es prévenu.</span></li>
+            <li><span><b>Notifié de chaque changement</b> : nouvelle mission, date, horaires ou lieu modifiés, contact ou consignes mis à jour, mission annulée. Sa page se met à jour en direct. Il choisit ce qu'il reçoit.</span></li>
+            <li><span><b>Ta vidéo de montage</b>, toujours à portée de main dans son appli.</span></li>
+            <li><span><b>Dans son agenda</b> : il ajoute une mission à son agenda Apple, Google ou Outlook en un clic, ou s'abonne une fois pour recevoir toutes ses missions et leurs changements.</span></li>
+            <li><span><b>À venir et passées</b> : ses prochaines missions d'un côté, tout son historique de l'autre.</span></li>
+            <li><span><b>Il confirme</b> « Livré et installé », « Récupéré » et ajoute des photos : tu es notifié en direct.</span></li>
+            <li><span><b>Sa paie, si tu veux</b> : le montant de chaque mission et le total de ses missions passées. Une case à décocher pour la cacher.</span></li>
+            <li><span><b>Jamais tes prix</b>, ni tes devis, ni tes notes privées.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module" id="f-finances">
+        <div class="module-head"><span class="ic-tile"><svg class="ic"><use href="#i-chart"/></svg></span><h3>Finances</h3><p>Savoir où tu en es, sans tableur.</p></div>
+        <div class="module-body">
+          <ul class="checks">
+            <li><span><b>Chiffre d'affaires confirmé</b> du mois et de l'année, et ce qui arrive d'ici la fin de l'année.</span></li>
+            <li><span><b>Mois par mois</b> : CA, coût des livraisons, ce qui reste.</span></li>
+            <li><span><b>Paie des livreurs</b> : tarif habituel, montant par mission, total par livreur.</span></li>
+          </ul>
+          <div class="good-to-know"><b>À savoir :</b> c'est un outil de pilotage. Ta comptabilité officielle reste basée sur tes factures et tes encaissements.</div>
+        </div>
+      </div>
+
+      <div class="module" id="f-mobile">
+        <div class="module-head"><span class="ic-tile"><svg class="ic"><use href="#i-phone"/></svg></span><h3>Mobile et notifications</h3><p>Presmile dans ta poche, entre deux installations.</p></div>
+        <div class="module-body">
+          <ul class="checks">
+            <li><span><b>Installable sur ton écran d'accueil</b>, iPhone comme Android, sans passer par un magasin d'applications.</span></li>
+            <li><span><b>Notifications</b> : nouvelle demande, devis signé, relances à faire, événements du lendemain, mission acceptée et livraisons, espace client, facture électronique refusée. Chacune se coupe si tu veux, et un appui t'ouvre directement la demande, le devis ou la facture concernés.</span></li>
+            <li><span><b>Temps réel</b> : ce que tu fais sur ton ordinateur apparaît aussitôt sur ton téléphone.</span></li>
+          </ul>
+          <div class="good-to-know"><b>À savoir :</b> sur iPhone, les notifications demandent d'ajouter Presmile à l'écran d'accueil (iOS 16.4 ou plus récent). <a class="more" href="sur-ton-telephone.html">Comment installer Presmile <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </div>
+
+      <div class="module" id="f-reglages">
+        <div class="module-head"><span class="ic-tile"><svg class="ic"><use href="#i-settings"/></svg></span><h3>Tes documents, à ton image</h3><p>Tout ce qui fait tes devis et tes factures, réglé une fois.</p></div>
+        <div class="module-body">
+          <ul class="checks">
+            <li><span><b>Ton logo</b>, tes coordonnées, ton statut (micro-entreprise, société, TVA ou franchise), tes conditions de paiement.</span></li>
+            <li><span><b>Tes CGV</b> en texte, en lien ou en PDF, ajoutées à chaque devis et acceptées à la signature.</span></li>
+            <li><span><b>Ton RIB en PDF</b>, joint à tes mails de devis et de factures.</span></li>
+            <li><span><b>Documents par événement</b> : plan d'accès, photos, devis retenu, avec aperçu directement dans Presmile et téléchargement.</span></li>
+            <li><span><b>Paramètres rangés par rubrique</b> : entreprise, facturation, métier et client, connexions, notifications.</span></li>
+            <li><span><b>Toutes tes données en un clic</b> : une archive ZIP avec tes clients, événements, devis, factures et documents, quand tu veux.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APPEL FINAL ============ -->
+  <section style="padding-top: 0;">
+    <div class="wrap">
+      <div class="cta-final">
+        <h2>Ta prochaine saison, sans la paperasse</h2>
+        <p>Presmile ouvre bientôt. Laisse ton email : tu seras parmi les premiers à pouvoir l'essayer, 14 jours gratuitement.</p>
+        <a class="btn btn-primary" href="lancement.html">Être prévenu du lancement <svg class="ic"><use href="#i-arrow"/></svg></a>
+        <span class="muted small">Au lancement : 14 jours d'essai gratuit, puis 19 € HT / mois, sans engagement.</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand-col" style="display:grid; gap:12px; align-content:start;">
+      <img src="assets/logo-presmile.svg" alt="Presmile" style="height:28px; width:auto;">
+      <p class="muted small">Devis automatiques, planning et factures pour les prestataires événementiels.</p>
+    </div>
+    <div><h4>Produit</h4><ul><li><a href="fonctionnalites.html">Fonctionnalités</a></li><li><a href="connecter-ton-site.html">Relier ton site</a></li><li><a href="facturation-electronique.html">Facturation électronique</a></li><li><a href="tarif.html">Tarif et frais</a></li></ul></div>
+    <div><h4>Aide</h4><ul><li><a href="questions.html">Questions fréquentes</a></li><li><a href="sur-ton-telephone.html">Presmile sur ton téléphone</a></li><li><a href="mailto:contact@presmile.fr">Nous écrire</a></li></ul></div>
+    <div><h4>Légal</h4><ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li></ul></div>
+    <div class="legal"><span>© 2026 Presmile</span><span>Fait sur la Côte d'Azur</span></div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta"><a class="btn btn-primary btn-block" href="lancement.html">Être prévenu du lancement</a><small>14 jours d'essai offerts au lancement</small></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

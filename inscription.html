@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Créer ton compte · Presmile</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/InstrumentSans-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/BricolageGrotesque-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="mock-banner"><b>Maquette locale</b> · ce formulaire n'envoie rien. En ligne, il créera ton compte et démarrera l'essai.</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Presmile, accueil"><img src="assets/logo-presmile.svg" alt="Presmile" width="112" height="34"></a>
+    <div class="header-cta" style="margin-left:auto;"><span class="muted small hide-sm">Déjà un compte ?</span><a class="btn btn-ghost btn-sm login-link" href="https://app.presmile.fr/" data-app-link>Se connecter</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="signup">
+    <form class="form" id="signupForm" novalidate>
+      <div style="display:grid; gap:8px;">
+        <h1 style="font-size: clamp(28px, 4vw, 38px);">Crée ton compte</h1>
+        <p class="muted">14 jours pour tout tester, sans carte bancaire. Une minute suffit.</p>
+      </div>
+      <button class="btn btn-google btn-block" type="button" onclick="document.getElementById('result').classList.add('show')"><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.6 5.4 2.7 13.2l7.9 6.2C12.5 13.6 17.8 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.7 6c4.5-4.2 6.9-10.3 6.9-17.7z"/><path fill="#FBBC05" d="M10.6 28.6c-.5-1.4-.8-3-.8-4.6s.3-3.2.8-4.6l-7.9-6.2C1 16.6 0 20.2 0 24s1 7.4 2.7 10.8l7.9-6.2z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.7-6c-2.2 1.5-5 2.3-8.2 2.3-6.2 0-11.5-4.1-13.4-9.9l-7.9 6.2C6.6 42.6 14.6 48 24 48z"/></svg>Continuer avec Google</button>
+      <div class="or">ou avec ton email</div>
+      <div class="field"><label for="firstname">Prénom</label><input id="firstname" autocomplete="given-name" required></div>
+      <div class="field"><label for="email">Email professionnel</label><input id="email" type="email" autocomplete="email" placeholder="toi@tonentreprise.fr" required></div>
+      <div class="field"><label for="password">Mot de passe</label><input id="password" type="password" autocomplete="new-password" minlength="8" required><span class="hint">8 caractères minimum.</span></div>
+      <p class="hint" id="formError" role="alert" style="color:var(--danger); font-weight:600; display:none;"></p>
+      <button class="btn btn-primary btn-block" type="submit">Créer mon compte gratuit</button>
+      <p class="fine">En créant ton compte, tu acceptes les <a href="#">conditions générales</a> et la <a href="#">politique de confidentialité</a>. Ton entreprise et ton métier te seront demandés ensuite, dans l'appli.</p>
+      <div class="result" id="result" role="status">
+        <b>Maquette : rien n'a été envoyé.</b>
+        <span>En ligne, ce bouton créera ton compte Presmile, t'ouvrira l'appli sur la configuration guidée (entreprise, métier, catalogue, formulaire de ton site) et démarrera ton essai de 14 jours. Le paiement se fera à la fin de l'essai, sur une page sécurisée Stripe.</span>
+      </div>
+    </form>
+
+    <aside class="summary" aria-label="Ta formule">
+      <div class="plan-pick"><label style="cursor:default;"><span><span class="pp-name">Presmile, tout compris</span><br><span class="muted small">Toutes les fonctions, sans limite</span></span><span class="pp-price" id="offerPrice"></span></label></div>
+      <div class="billing-toggle" role="group" aria-label="Facturation" style="justify-self:start;">
+        <button type="button" aria-pressed="true" data-billing="monthly">Mensuel</button>
+        <button type="button" aria-pressed="false" data-billing="yearly">Annuel <span class="save">2 mois offerts</span></button>
+      </div>
+      <div class="timeline">
+        <div><i>1</i><span><b>Aujourd'hui</b><br><span class="muted">Ton compte est prêt, tout est débloqué.</span></span></div>
+        <div><i>2</i><span><b>Pendant 14 jours</b><br><span class="muted">Tu testes avec tes vraies prestas. Aucun paiement.</span></span></div>
+        <div><i>3</i><span><b id="trialEnd">Fin de l'essai</b><br><span class="muted" id="chargeLine"></span></span></div>
+      </div>
+      <p class="muted small">Sans engagement en mensuel, résiliable depuis ton compte. Prix hors taxes. Frais éventuels (facturation électronique, IA) : voir <a href="tarif.html#frais">le détail des frais</a>.</p>
+    </aside>
+  </div>
+</main>
+
+<footer style="margin-top: 48px;">
+  <div class="wrap"><div class="legal" style="grid-column:1/-1; border-top:0; padding-top:0;"><span>© 2026 Presmile</span><a href="index.html">Retour au site</a></div></div>
+</footer>
+
+<script>
+const PRICES = {monthly: 19, yearly: 190};
+try { const saved = sessionStorage.getItem("signupEmail"); if (saved) { document.getElementById("email").value = saved; sessionStorage.removeItem("signupEmail"); document.getElementById("firstname").focus(); } } catch (e) { /* rien */ }
+const params = new URLSearchParams(location.search);
+let billing = params.get("billing") === "yearly" ? "yearly" : "monthly";
+
+const end = new Date(Date.now() + 14 * 864e5);
+document.getElementById("trialEnd").textContent = "Le " + end.toLocaleDateString("fr-FR", {day: "numeric", month: "long"});
+
+function render() {
+  document.querySelectorAll("[data-billing]").forEach(b => b.setAttribute("aria-pressed", b.dataset.billing === billing));
+  const p = PRICES[billing];
+  document.getElementById("offerPrice").textContent = billing === "yearly" ? `${p} € HT / an` : `${p} € HT / mois`;
+  document.getElementById("chargeLine").textContent = `Si tu continues : ${p} € HT ${billing === "yearly" ? "par an" : "par mois"}. Sinon, rien à faire, ton compte passe simplement en lecture seule.`;
+}
+document.querySelectorAll("[data-billing]").forEach(b => b.addEventListener("click", () => { billing = b.dataset.billing; render(); }));
+render();
+
+document.getElementById("signupForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const err = document.getElementById("formError");
+  const missing = [...e.target.querySelectorAll("[required]")].find(el => el.type === "checkbox" ? !el.checked : !el.value.trim());
+  const email = document.getElementById("email").value;
+  let message = "";
+  if (missing) message = "Remplis tous les champs pour continuer.";
+  else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) message = "Il manque la fin de l'adresse email, par exemple @gmail.com.";
+  else if (document.getElementById("password").value.length < 8) message = "Choisis un mot de passe d'au moins 8 caractères.";
+  err.textContent = message;
+  err.style.display = message ? "block" : "none";
+  document.getElementById("result").classList.toggle("show", !message);
+});
+</script>
+</body>
+</html>

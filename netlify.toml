@@ -1,0 +1,25 @@
+# Site vitrine Presmile sur Netlify : fichiers statiques, rien à compiler.
+[build]
+  publish = "."
+  command = ""
+
+# Avant le lancement, l'inscription (maquette) renvoie vers « Être prévenu du lancement ».
+# À retirer quand l'inscription sera branchée sur l'appli.
+[[redirects]]
+  from = "/inscription.html"
+  to = "/lancement.html"
+  status = 302
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"

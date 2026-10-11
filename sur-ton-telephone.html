@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presmile sur ton téléphone · Presmile</title>
+<meta name="description" content="Comment ajouter Presmile à l'écran d'accueil de ton iPhone ou de ton Android, et activer les notifications, étape par étape.">
+<meta name="theme-color" content="#F4CB3A">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/InstrumentSans-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/BricolageGrotesque-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="has-sticky">
+
+
+<!-- Icônes (tracés type Lucide) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24"><path d="M12 22v-5"/><path d="M9 8V2M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 13h4M10 17h4"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.4 3.6a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M8 2v4M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></symbol>
+  <symbol id="i-euro" viewBox="0 0 24 24"><path d="M4 10h12M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></symbol>
+</svg>
+
+<header class="site-header" id="top">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Presmile, accueil"><img src="assets/logo-presmile.svg" alt="Presmile" width="112" height="34"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="fonctionnalites.html">Fonctionnalités</a>
+      <a href="connecter-ton-site.html">Relier ton site</a>
+      <a href="facturation-electronique.html">Facturation électronique</a>
+      <a href="tarif.html">Tarif</a>
+      <a href="sur-ton-telephone.html" class="active" aria-current="page">Sur ton téléphone</a>
+      <a href="questions.html">Questions</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-ghost btn-sm" href="https://app.presmile.fr/" data-app-link>Se connecter</a>
+      <a class="btn btn-primary btn-sm" href="lancement.html">Être prévenu</a>
+    </div>
+    <button class="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" onclick="toggleMenu(this)"><svg class="ic"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">Presmile sur ton téléphone</span>
+      <h1 style="font-size: clamp(34px, 4.6vw, 54px);">Installe Presmile en 30 secondes</h1>
+      <p>Pas besoin de l'App Store ni de Google Play : Presmile s'ajoute à ton écran d'accueil comme une vraie appli, avec son icône et ses notifications.</p>
+      <div class="os-tabs" role="tablist" aria-label="Ton téléphone">
+        <button type="button" role="tab" id="tab-iphone" aria-controls="panel-iphone" aria-selected="true">iPhone</button>
+        <button type="button" role="tab" id="tab-android" aria-controls="panel-android" aria-selected="false">Android</button>
+      </div>
+    </div>
+  </div>
+
+  <section style="padding-top: 32px;">
+    <div class="wrap">
+
+      <!-- ================= IPHONE ================= -->
+      <div class="os-panel" id="panel-iphone" role="tabpanel" aria-labelledby="tab-iphone">
+        <div class="part-title"><span class="ic-tile"><svg class="ic"><use href="#i-phone"/></svg></span><h2 style="font-size: clamp(24px, 3vw, 32px);">Ajouter Presmile à l'écran d'accueil</h2></div>
+        <div class="guide">
+          <div class="guide-step">
+            <div class="txt"><span class="n">1</span><h3>Ouvre Presmile dans Safari</h3><p>Va sur <b>app.presmile.fr</b> avec Safari, le navigateur de l'iPhone (l'icône de boussole bleue), et connecte-toi.</p><div class="tip">Utilise Safari : c'est le navigateur qui gère le mieux l'ajout à l'écran d'accueil sur iPhone.</div></div>
+            <div class="shot" aria-hidden="true"><div class="status"><span>9:41</span><span>● ● ●</span></div>
+              <div class="page"><div class="mini"><b>Tableau de bord</b><i></i><i style="width:70%"></i><i style="width:85%"></i><i style="width:60%"></i></div></div>
+              <div class="safari-bar"><div class="safari-url">app.presmile.fr</div><div class="safari-icons"><span>‹</span><span>›</span><span class="hl"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0A84FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m8 7 4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg></span><span>▢</span><span>⧉</span></div></div>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="txt"><span class="n">2</span><h3>Touche le bouton Partager</h3><p>C'est le carré avec une flèche vers le haut, en bas de l'écran (en haut sur iPad). Si tu ne vois pas la barre, fais défiler un peu vers le haut.</p></div>
+            <div class="shot" aria-hidden="true"><div class="status"><span>9:41</span><span>● ● ●</span></div>
+              <div class="page"><div class="mini"><b>Tableau de bord</b><i></i><i style="width:70%"></i></div></div>
+              <div class="dim"></div>
+              <div class="sheet"><div class="grab"></div>
+                <div class="group"><div class="item">Copier<svg viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 16V6a2 2 0 0 1 2-2h10"/></svg></div><div class="item">Ajouter aux favoris<svg viewBox="0 0 24 24"><path d="m12 3 3 6 6 1-4.5 4 1 6-5.5-3-5.5 3 1-6L3 10l6-1z"/></svg></div></div>
+                <div class="group"><div class="item hl">Sur l'écran d'accueil<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg></div><div class="item">Imprimer<svg viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><rect x="4" y="9" width="16" height="8" rx="2"/></svg></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="txt"><span class="n">3</span><h3>Choisis « Sur l'écran d'accueil »</h3><p>Fais défiler la liste vers le bas si besoin, puis touche <b>« Sur l'écran d'accueil »</b>. Sur certaines versions d'iOS, le libellé est <b>« Ajouter à l'écran d'accueil »</b>.</p></div>
+            <div class="shot" aria-hidden="true"><div class="status"><span>9:41</span><span>● ● ●</span></div>
+              <div class="page" style="background:#F2F2F7">
+                <div class="navbar-ios"><span class="blue">Annuler</span><b>Écran d'accueil</b><span class="blue hl" style="font-weight:600; padding:2px 4px;">Ajouter</span></div>
+                <div class="add-card"><img src="assets/monogramme.svg" alt=""><div><b>Presmile</b><br><span style="color:#8E8E93">app.presmile.fr</span></div></div>
+                <p style="padding:0 16px; color:#6D6D72; font-size:11px;">Une icône sera ajoutée à ton écran d'accueil pour accéder rapidement à ce site.</p>
+              </div>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="txt"><span class="n">4</span><h3>Touche « Ajouter »</h3><p>En haut à droite. L'icône Presmile apparaît sur ton écran d'accueil.</p><div class="tip"><b>Important :</b> ouvre toujours Presmile depuis cette icône, et non depuis Safari. C'est indispensable pour recevoir les notifications.</div></div>
+            <div class="shot" aria-hidden="true"><div class="status" style="color:#fff; background:#2a73b8"><span>9:41</span><span>● ● ●</span></div>
+              <div class="home"><span class="app-ic"><i></i>Photos</span><span class="app-ic"><i></i>Plans</span><span class="app-ic"><i></i>Mail</span><span class="app-ic"><i></i>Agenda</span><span class="app-ic"><i></i>Météo</span><span class="app-ic"><i></i>Notes</span><span class="app-ic"><img class="hl" src="assets/monogramme.svg" alt="">Presmile</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="part-title"><span class="ic-tile"><svg class="ic"><use href="#i-bell"/></svg></span><h2 style="font-size: clamp(24px, 3vw, 32px);">Activer les notifications</h2></div>
+        <div class="guide">
+          <div class="guide-step">
+            <div class="txt"><span class="n">1</span><h3>Ouvre Paramètres depuis l'icône</h3><p>Ouvre Presmile <b>depuis l'icône de l'écran d'accueil</b>, touche <b>Plus</b> en bas à droite, puis <b>Paramètres</b>, et descends jusqu'à <b>Notifications</b>.</p><div class="tip">Il faut iOS 16.4 ou plus récent (Réglages → Général → Informations → Version d'iOS).</div></div>
+            <div class="shot" aria-hidden="true"><div class="status"><span>9:41</span><span>● ● ●</span></div>
+              <div class="pm-screen"><span class="t">Paramètres</span>
+                <div class="card"><b>Notifications</b><p>Reçois une notification sur ton téléphone, même appli fermée.</p><span class="mbtn hl">Activer sur cet appareil</span></div>
+                <div class="card"><b>Facturation électronique</b><p>…</p></div>
+              </div>
+              <div class="pm-tabbar"><span><i></i>Accueil</span><span><i></i>Demandes</span><span><i></i>Devis</span><span><i></i>Agenda</span><span style="color:var(--ink); font-weight:700"><i style="background:var(--citron)"></i>Plus</span></div>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="txt"><span class="n">2</span><h3>Touche « Activer sur cet appareil », puis « Autoriser »</h3><p>L'iPhone te demande la permission : touche <b>« Autoriser »</b>.</p></div>
+            <div class="shot" aria-hidden="true"><div class="status"><span>9:41</span><span>● ● ●</span></div>
+              <div class="pm-screen"><span class="t">Paramètres</span><div class="card"><b>Notifications</b><p>…</p></div></div>
+              <div class="dim"></div>
+              <div class="alert-ios"><p><b>« Presmile » souhaite vous envoyer des notifications</b>Elles peuvent inclure des alertes, des sons et des pastilles.</p><div class="btns"><span>Refuser</span><span class="hl" style="border-radius:0">Autoriser</span></div></div>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="txt"><span class="n">3</span><h3>Envoie-toi une notification de test</h3><p>Touche <b>« Envoyer une notification de test »</b> : elle arrive en quelques secondes. Tu peux ensuite choisir, dans la même section, les notifications que tu veux recevoir.</p><div class="tip">Tu as touché « Refuser » ? Va dans <b>Réglages → Notifications → Presmile</b> sur ton iPhone, active <b>Autoriser les notifications</b>, puis recommence l'étape 2.</div></div>
+            <div class="shot" aria-hidden="true"><div class="status" style="color:#fff; background:#12245C"><span>9:41</span><span>● ● ●</span></div>
+              <div class="lock"><span style="font-size:12px">samedi 12 octobre</span><span class="clock">9:41</span>
+                <div class="notif"><img src="assets/monogramme.svg" alt=""><div class="n-body"><div class="n-head"><b>Presmile</b><span class="when">maintenant</span></div>Les notifications fonctionnent sur cet appareil.</div></div>
+                <div class="notif"><img src="assets/monogramme.svg" alt=""><div class="n-body"><div class="n-head"><b>Nouvelle demande de devis</b><span class="when">2 min</span></div>Léa Martin · Mariage le 12/10</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= ANDROID ================= -->
+      <div class="os-panel" id="panel-android" role="tabpanel" aria-labelledby="tab-android" hidden>
+        <div class="part-title"><span class="ic-tile"><svg class="ic"><use href="#i-phone"/></svg></span><h2 style="font-size: clamp(24px, 3vw, 32px);">Installer Presmile</h2></div>
+        <div class="guide">
+          <div class="guide-step">
+            <div class="txt"><span class="n">1</span><h3>Ouvre Presmile dans Chrome</h3><p>Va sur <b>app.presmile.fr</b> avec Google Chrome et connecte-toi.</p><div class="tip">Chrome propose parfois tout seul une bannière « Installer l'application » : tu peux la toucher directement et passer à l'étape 3.</div></div>
+            <div class="shot android" aria-hidden="true"><div class="status"><span>9:41</span><span>▾ ▮</span></div>
+              <div class="page"><div class="chrome-top"><div class="omni">app.presmile.fr</div><div class="dots hl">···</div></div><div class="mini"><b>Tableau de bord</b><i></i><i style="width:70%"></i><i style="width:85%"></i></div></div>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="txt"><span class="n">2</span><h3>Ouvre le menu ⋮, puis « Ajouter à l'écran d'accueil »</h3><p>Touche les <b>trois points</b> en haut à droite, puis <b>« Ajouter à l'écran d'accueil »</b>. Selon ta version, l'option s'appelle aussi <b>« Installer l'application »</b>.</p></div>
+            <div class="shot android" aria-hidden="true"><div class="status"><span>9:41</span><span>▾ ▮</span></div>
+              <div class="page"><div class="chrome-top"><div class="omni">app.presmile.fr</div><div class="dots">···</div></div><div class="mini"><b>Tableau de bord</b><i></i></div>
+                <div class="menu-android"><div>Nouvel onglet</div><div>Historique</div><div>Favoris</div><div>Partager…</div><div class="hl" style="margin:0 4px">Ajouter à l'écran d'accueil</div><div>Paramètres</div></div></div>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="txt"><span class="n">3</span><h3>Confirme avec « Installer »</h3><p>Touche <b>« Installer »</b> (ou « Ajouter »). L'icône Presmile rejoint ton écran d'accueil et la liste de tes applis.</p></div>
+            <div class="shot android" aria-hidden="true"><div class="status"><span>9:41</span><span>▾ ▮</span></div>
+              <div class="page"><div class="chrome-top"><div class="omni">app.presmile.fr</div><div class="dots">···</div></div></div>
+              <div class="dim"></div>
+              <div class="dialog-android"><b style="font-size:14px">Installer l'application</b><div class="row2"><img src="assets/monogramme.svg" alt=""><div><b>Presmile</b><br><span style="color:#5f6368">app.presmile.fr</span></div></div><div class="acts"><span>Annuler</span><span class="hl" style="padding:2px 6px">Installer</span></div></div>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="txt"><span class="n">4</span><h3>Ouvre Presmile depuis son icône</h3><p>Presmile s'ouvre en plein écran, comme une appli. Sur les téléphones Samsung avec Samsung Internet, le principe est le même : menu ☰, puis « Ajouter la page à », puis « Écran d'accueil ».</p></div>
+            <div class="shot android" aria-hidden="true"><div class="status" style="color:#fff; background:#2a73b8"><span>9:41</span><span>▾ ▮</span></div>
+              <div class="home"><span class="app-ic"><i></i>Photos</span><span class="app-ic"><i></i>Maps</span><span class="app-ic"><i></i>Gmail</span><span class="app-ic"><i></i>Agenda</span><span class="app-ic"><i></i>Chrome</span><span class="app-ic"><i></i>WhatsApp</span><span class="app-ic"><img class="hl" src="assets/monogramme.svg" alt="">Presmile</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="part-title"><span class="ic-tile"><svg class="ic"><use href="#i-bell"/></svg></span><h2 style="font-size: clamp(24px, 3vw, 32px);">Activer les notifications</h2></div>
+        <div class="guide">
+          <div class="guide-step">
+            <div class="txt"><span class="n">1</span><h3>Va dans Paramètres, section Notifications</h3><p>Dans Presmile, touche <b>Plus</b> en bas à droite, puis <b>Paramètres</b>, et descends jusqu'à <b>Notifications</b>. Touche <b>« Activer sur cet appareil »</b>.</p><div class="tip">Sur Android, les notifications marchent même sans installer l'appli, directement dans Chrome.</div></div>
+            <div class="shot android" aria-hidden="true"><div class="status"><span>9:41</span><span>▾ ▮</span></div>
+              <div class="pm-screen"><span class="t">Paramètres</span>
+                <div class="card"><b>Notifications</b><p>Reçois une notification sur ton téléphone, même appli fermée.</p><span class="mbtn hl">Activer sur cet appareil</span></div>
+              </div>
+              <div class="pm-tabbar"><span><i></i>Accueil</span><span><i></i>Demandes</span><span><i></i>Devis</span><span><i></i>Agenda</span><span style="color:var(--ink); font-weight:700"><i style="background:var(--citron)"></i>Plus</span></div>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="txt"><span class="n">2</span><h3>Touche « Autoriser »</h3><p>Android te demande si Presmile peut t'envoyer des notifications : touche <b>« Autoriser »</b>.</p></div>
+            <div class="shot android" aria-hidden="true"><div class="status"><span>9:41</span><span>▾ ▮</span></div>
+              <div class="pm-screen"><span class="t">Paramètres</span><div class="card"><b>Notifications</b><p>…</p></div></div>
+              <div class="dim"></div>
+              <div class="perm-android"><svg class="ic" style="justify-self:center; width:24px; height:24px; color:#1a73e8"><use href="#i-bell"/></svg><b style="font-size:13px">Autoriser Presmile à vous envoyer des notifications ?</b><div class="acts"><span class="hl">Autoriser</span><span style="background:none">Ne pas autoriser</span></div></div>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="txt"><span class="n">3</span><h3>Envoie-toi une notification de test</h3><p>Touche <b>« Envoyer une notification de test »</b> : elle arrive en quelques secondes. Choisis ensuite les notifications que tu veux recevoir.</p><div class="tip">Tu as refusé ? Dans les <b>Paramètres</b> de ton téléphone : <b>Applications → Presmile</b> (ou <b>Chrome</b> si tu ne l'as pas installé) <b>→ Notifications</b>, active-les, puis recommence l'étape 1.</div></div>
+            <div class="shot android" aria-hidden="true"><div class="status" style="color:#fff; background:#12245C"><span>9:41</span><span>▾ ▮</span></div>
+              <div class="lock"><span style="font-size:12px">samedi 12 octobre</span><span class="clock">9:41</span>
+                <div class="notif"><img src="assets/monogramme.svg" alt=""><div class="n-body"><div class="n-head"><b>Presmile</b><span class="when">maintenant</span></div>Les notifications fonctionnent sur cet appareil.</div></div>
+                <div class="notif"><img src="assets/monogramme.svg" alt=""><div class="n-body"><div class="n-head"><b>Karim : livré et installé</b><span class="when">16:42</span></div>Mariage Léa &amp; Tom · Nice</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= COMMUN ================= -->
+      <div class="part-title"><span class="ic-tile"><svg class="ic"><use href="#i-bell"/></svg></span><h2 style="font-size: clamp(24px, 3vw, 32px);">Les notifications que tu peux recevoir</h2></div>
+      <div class="transparency">
+        <div class="card"><h3>Nouvelle demande de devis</h3><p>Dès qu'un client remplit ton formulaire en ligne.</p></div>
+        <div class="card"><h3>Devis signé</h3><p>Quand un client signe ton devis en ligne.</p></div>
+        <div class="card"><h3>Relances à faire</h3><p>Un devis reste sans réponse ou une facture n'est pas payée à temps.</p></div>
+        <div class="card"><h3>Événements du lendemain</h3><p>La veille à 18 h : lieu, horaires et matériel à préparer.</p></div>
+        <div class="card"><h3>Livraisons</h3><p>Un livreur accepte une mission proposée, confirme une livraison ou une récupération, ou ajoute une photo.</p></div>
+        <div class="card"><h3>Espace client</h3><p>Ton client remplit son questionnaire ou ajoute un document, ou un questionnaire est à envoyer.</p></div>
+        <div class="card"><h3>Facture électronique refusée</h3><p>Une facture transmise est rejetée, refusée ou contestée.</p></div>
+      </div>
+      <p class="also">Chaque type se coupe dans Paramètres → Notifications. Les notifications s'activent appareil par appareil : refais l'étape sur chaque téléphone ou ordinateur. Si tu te déconnectes, cet appareil ne reçoit plus les notifications.</p>
+    </div>
+  </section>
+
+  <!-- ============ APPEL FINAL ============ -->
+  <section style="padding-top: 0;">
+    <div class="wrap">
+      <div class="cta-final">
+        <h2>Ta prochaine saison, sans la paperasse</h2>
+        <p>Presmile ouvre bientôt. Laisse ton email : tu seras parmi les premiers à pouvoir l'essayer, 14 jours gratuitement.</p>
+        <a class="btn btn-primary" href="lancement.html">Être prévenu du lancement <svg class="ic"><use href="#i-arrow"/></svg></a>
+        <span class="muted small">Au lancement : 14 jours d'essai gratuit, puis 19 € HT / mois, sans engagement.</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand-col" style="display:grid; gap:12px; align-content:start;">
+      <img src="assets/logo-presmile.svg" alt="Presmile" style="height:28px; width:auto;">
+      <p class="muted small">Devis automatiques, planning et factures pour les prestataires événementiels.</p>
+    </div>
+    <div><h4>Produit</h4><ul><li><a href="fonctionnalites.html">Fonctionnalités</a></li><li><a href="connecter-ton-site.html">Relier ton site</a></li><li><a href="facturation-electronique.html">Facturation électronique</a></li><li><a href="tarif.html">Tarif et frais</a></li></ul></div>
+    <div><h4>Aide</h4><ul><li><a href="questions.html">Questions fréquentes</a></li><li><a href="sur-ton-telephone.html">Presmile sur ton téléphone</a></li><li><a href="mailto:contact@presmile.fr">Nous écrire</a></li></ul></div>
+    <div><h4>Légal</h4><ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li></ul></div>
+    <div class="legal"><span>© 2026 Presmile</span><span>Fait sur la Côte d'Azur</span></div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta"><a class="btn btn-primary btn-block" href="lancement.html">Être prévenu du lancement</a><small>14 jours d'essai offerts au lancement</small></div>
+<script src="assets/site.js"></script>
+</body>
+</html>
