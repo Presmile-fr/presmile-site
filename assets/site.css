@@ -514,3 +514,89 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .
 .prose p { color: var(--ink-2); }
 mark.todo { background: #FDEBC3; color: #7A4B00; padding: 0 4px; border-radius: 4px; font-weight: 600; }
 .field select:invalid { color: var(--ink-2); }
+
+/* ---- v5 : confort sur téléphone ---- */
+html { -webkit-text-size-adjust: 100%; }
+a, button, summary, label { -webkit-tap-highlight-color: rgba(18,36,92,.08); }
+.nav .nav-mobile { display: none; }
+body.menu-open { overflow: hidden; }
+.menu-backdrop { display: none; }
+
+@media (max-width: 1240px) {
+  /* Menu : panneau sous l'en-tête, grandes lignes faciles à toucher, fermeture au toucher en dehors */
+  .site-header.open .nav { gap: 2px; max-height: calc(100dvh - 64px); overflow-y: auto; overscroll-behavior: contain; padding: 8px 12px calc(16px + env(safe-area-inset-bottom)); }
+  .site-header.open .nav a { display: flex; align-items: center; justify-content: space-between; min-height: 52px; padding: 0 14px; border-radius: 12px; }
+  .site-header.open .nav a::after { content: "›"; font-size: 22px; color: var(--ink-3); }
+  .site-header.open .nav a.active { background: var(--citron-soft); }
+  .site-header.open .nav .nav-mobile { display: flex; }
+  .site-header.open .nav .nav-sep { display: block; height: 1px; background: var(--line); margin: 8px 6px; min-height: 0; padding: 0; }
+  .site-header.open .nav .nav-cta { justify-content: center; margin-top: 4px; background: var(--citron); border: 1.5px solid var(--ink); border-radius: 999px; font-weight: 700; }
+  .site-header.open .nav .nav-cta::after, .site-header.open .nav .nav-login::after { content: none; }
+  .site-header.open .nav .nav-login { justify-content: center; border: 1.5px solid var(--line-strong); border-radius: 999px; font-weight: 600; }
+  .site-header.open .menu-btn { background: var(--sunken); }
+  body.menu-open .menu-backdrop { display: block; position: fixed; inset: 0; z-index: 40; background: rgba(18,36,92,.28); }
+  body.menu-open .sticky-cta { transform: translateY(110%); }
+}
+
+@media (max-width: 760px) {
+  .site-header .wrap { height: 64px; }
+  .site-header.open .nav { top: 64px; }
+  html { scroll-padding-top: 76px; }
+  section { padding: 48px 0; }
+  .section-head { margin-bottom: 28px; gap: 10px; }
+  .section-head p, .page-head p { font-size: 17px; }
+  .page-head { padding: 32px 0 0; }
+  .hero { padding: 24px 0 32px; }
+  .hero-copy { gap: 18px; }
+  .hero .lead { font-size: 18px; }
+  .eyebrow { font-size: 13.5px; }
+  footer { margin-top: 48px; padding-top: 36px; }
+  footer ul { gap: 0; }
+  footer ul a { display: inline-block; padding: 9px 0; }
+  .cta-final { padding: 40px 18px; }
+  .cta-final p { font-size: 17px; }
+
+  /* Bandeau de confiance : liste alignée à gauche plutôt que lignes centrées irrégulières */
+  .trust .wrap { display: grid; justify-content: start; gap: 10px; padding-top: 16px; padding-bottom: 16px; }
+  .trust span { font-size: 14.5px; align-items: flex-start; }
+  .trust .ic { margin-top: 2px; }
+
+  /* Cartes plus compactes : icône à côté du titre, numéro à côté de l'étape */
+  .benefit, .strength { grid-template-columns: 44px 1fr; column-gap: 14px; row-gap: 10px; padding: 20px; align-items: center; }
+  .benefit > *, .strength > * { grid-column: 1 / -1; }
+  .benefit .ic-tile, .strength .ic-tile { grid-column: 1; width: 44px; height: 44px; }
+  .benefit .ic-tile + h3, .strength .ic-tile + h3 { grid-column: 2; }
+  .steps3 > div { grid-template-columns: 34px 1fr; column-gap: 14px; row-gap: 4px; padding: 18px; }
+  .steps3 > div::before { grid-row: 1 / span 3; }
+  .steps3 > div > * { grid-column: 2; }
+  .step { padding: 16px; }
+  .compare > div { padding: 22px 20px; }
+  .card { padding: 18px; }
+  .pricebox .price b { font-size: 52px; }
+
+  /* Liens « → » et petits boutons : au moins 44 px de hauteur à toucher */
+  .more { min-height: 44px; margin: -6px 0; }
+  .billing-toggle button { min-height: 44px; }
+  .faq summary { padding: 16px 0; min-height: 52px; align-items: center; }
+
+  /* Barre d'essai du bas : une seule ligne, moins haute */
+  .sticky-cta { padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); }
+  .sticky-cta small { display: none; }
+  body.has-sticky { padding-bottom: 72px; }
+  body.typing .sticky-cta { transform: translateY(110%); }
+
+  /* Sommaire des fonctionnalités : une barre qui défile de côté et reste sous l'en-tête */
+  .toc { position: sticky; top: 64px; z-index: 30; flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; margin: 0 -16px 24px; padding: 10px 16px; background: var(--page); border-bottom: 1px solid var(--line); box-shadow: 0 6px 12px -8px rgba(18,36,92,.18); -webkit-overflow-scrolling: touch; scroll-snap-type: x proximity; }
+  .toc::-webkit-scrollbar { display: none; }
+  .toc a { flex: none; min-height: 40px; display: inline-flex; align-items: center; scroll-snap-align: start; }
+  .toc a.active { background: var(--inverse); color: #fff; border-color: var(--inverse); }
+  html:has(.toc) { scroll-padding-top: 140px; }
+
+  /* Formulaire d'inscription au lancement : le formulaire d'abord, sans cadre superflu */
+  .signup { padding-top: 16px; gap: 28px; }
+}
+
+@media (max-width: 480px) {
+  .stage .window-body { padding: 14px; gap: 10px; font-size: 13px; }
+  .hero-form .btn { min-height: 52px; }
+}

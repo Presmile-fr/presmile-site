@@ -46,6 +46,9 @@
       <a href="tarif.html">Tarif</a>
       <a href="sur-ton-telephone.html">Sur ton téléphone</a>
       <a href="questions.html">Questions</a>
+      <span class="nav-mobile nav-sep" aria-hidden="true"></span>
+      <a class="nav-mobile nav-login" href="https://app.presmile.fr/" data-app-link>Se connecter</a>
+      <a class="nav-mobile nav-cta" href="lancement.html">Être prévenu du lancement</a>
     </nav>
     <div class="header-cta">
       <a class="btn btn-ghost btn-sm" href="https://app.presmile.fr/" data-app-link>Se connecter</a>
@@ -66,8 +69,8 @@
           <h1 style="font-size: clamp(28px, 4vw, 38px);">Sois prévenu du lancement</h1>
           <p class="muted">Presmile ouvre bientôt à tous les prestataires de l'événementiel. Laisse ton email : on t'écrit dès l'ouverture, avec tes 14 jours d'essai gratuit.</p>
         </div>
-        <div class="field"><label for="prenom">Prénom</label><input id="prenom" name="prenom" autocomplete="given-name" required></div>
-        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="toi@tonentreprise.fr" required></div>
+        <div class="field"><label for="prenom">Prénom</label><input id="prenom" name="prenom" autocomplete="given-name" autocapitalize="words" enterkeyhint="next" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" enterkeyhint="next" placeholder="toi@tonentreprise.fr" required></div>
         <div class="field"><label for="metier">Ton métier</label><select id="metier" name="metier" required><option value="">Choisis…</option><option>Photobooth</option><option>Photographe</option><option>Vidéaste</option><option>DJ ou musicien</option><option>Traiteur</option><option>Décorateur ou fleuriste</option><option>Wedding planner</option><option>Autre métier de l'événement</option></select></div>
         <label class="check"><input type="checkbox" name="consentement" value="oui" required><span>J'accepte que Presmile m'écrive pour m'annoncer son lancement. Rien d'autre, et je peux me désinscrire à tout moment. <a href="confidentialite.html">Confidentialité</a></span></label>
         <button class="btn btn-primary btn-block" type="submit">Être prévenu du lancement</button>
