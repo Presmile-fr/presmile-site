@@ -20,7 +20,7 @@ function setMenu(open) {
 function toggleMenu() { setMenu(!header.classList.contains("open")); }
 backdrop.addEventListener("click", () => setMenu(false));
 addEventListener("keydown", e => { if (e.key === "Escape" && header && header.classList.contains("open")) { setMenu(false); menuBtn && menuBtn.focus(); } });
-matchMedia("(min-width: 1241px)").addEventListener("change", e => { if (e.matches) setMenu(false); });
+matchMedia("(min-width: 1081px)").addEventListener("change", e => { if (e.matches) setMenu(false); });
 if (header) header.querySelectorAll(".nav a").forEach(a => a.addEventListener("click", () => setMenu(false)));
 
 // Page en cours mise en avant dans le menu
@@ -106,4 +106,14 @@ if (toc && "IntersectionObserver" in window) {
     mark();
   }, {rootMargin: "-150px 0px -55% 0px"});
   links.forEach((a, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
+}
+
+// Accueil : les sections apparaissent en douceur au défilement (tout reste visible sans JavaScript)
+const reveals = document.querySelectorAll(".reveal");
+if (reveals.length && "IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  document.documentElement.classList.add("js-reveal");
+  const seen = new IntersectionObserver(entries => entries.forEach(en => {
+    if (en.isIntersecting) { en.target.classList.add("in"); seen.unobserve(en.target); }
+  }), {rootMargin: "0px 0px -8% 0px"});
+  reveals.forEach((el, i) => { el.style.transitionDelay = `${(i % 4) * 60}ms`; seen.observe(el); });
 }

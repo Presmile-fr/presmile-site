@@ -11,7 +11,7 @@
 <link rel="preload" href="assets/fonts/BricolageGrotesque-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
 </head>
-<body class="has-sticky">
+<body class="has-sticky p-home">
 
 
 <!-- Icônes (tracés type Lucide) -->
@@ -42,10 +42,10 @@
     <a class="logo" href="index.html" aria-label="Presmile, accueil"><img src="assets/logo-presmile.svg" alt="Presmile" width="112" height="34"></a>
     <nav class="nav" aria-label="Navigation principale">
       <a href="fonctionnalites.html">Fonctionnalités</a>
-      <a href="connecter-ton-site.html">Relier ton site</a>
+      <a class="nav-more" href="connecter-ton-site.html">Relier ton site</a>
       <a href="facturation-electronique.html">Facturation électronique</a>
       <a href="tarif.html">Tarif</a>
-      <a href="sur-ton-telephone.html">Sur ton téléphone</a>
+      <a class="nav-more" href="sur-ton-telephone.html">Sur ton téléphone</a>
       <a href="questions.html">Questions</a>
       <span class="nav-mobile nav-sep" aria-hidden="true"></span>
       <a class="nav-mobile nav-login" href="https://app.presmile.fr/" data-app-link>Se connecter</a>
@@ -61,190 +61,168 @@
 
 <main>
   <!-- ============ ACCROCHE ============ -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow">Photographes, photobooths, DJ et tous les prestataires événementiels</span>
-        <h1>Tes devis se préparent <span class="accent">tout seuls.</span></h1>
-        <p class="lead">Chaque demande reçue sur ton site devient un devis chiffré, prêt à envoyer. Signature en ligne, relances et factures suivent. <b style="color:var(--ink)">Toi, tu te concentres sur l'événement.</b></p>
-        <form class="hero-form" data-signup action="lancement.html">
+  <section class="p-hero">
+    <div class="wrap p-hero-grid">
+      <div class="p-hero-copy">
+        <p class="p-kicker">Photographes, photobooths, DJ, traiteurs, wedding planners…</p>
+        <h1 class="p-display">Tes devis se préparent <span class="p-mark">tout&nbsp;seuls.</span></h1>
+        <p class="p-lead">Chaque demande reçue sur ton site devient un devis chiffré, prêt à envoyer. La signature en ligne, les relances et les factures suivent. Toi, tu te concentres sur l'événement.</p>
+        <form class="hero-form p-form" data-signup action="lancement.html">
           <label class="sr-only" for="heroEmail">Ton email</label>
-          <input id="heroEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="Ton email professionnel">
+          <input id="heroEmail" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" placeholder="Ton email professionnel">
           <button class="btn btn-primary" type="submit">Être prévenu</button>
         </form>
-        <p class="micro"><b>Bientôt disponible</b> · 14 jours d'essai gratuit au lancement · sans carte bancaire · 19 € HT/mois ensuite</p>
+        <p class="p-fine">Ouverture prochaine · 14 jours d'essai · sans carte bancaire</p>
       </div>
 
-      <div class="stage" aria-hidden="true">
-        <div class="window">
-          <div class="window-bar"><i></i><i></i><i></i></div>
-          <div class="window-body">
-            <div class="row"><span class="mini-title">Demandes</span><span class="badge citron">3 nouvelles</span></div>
-            <div class="list">
-              <div><span><b>Léa Martin</b><small>Mariage · 12/10/2026 · Château de Crémat, Nice</small></span><span class="amount">817,80 €</span></div>
-              <div><span><b>Agence Solaris</b><small>Séminaire · 17/10/2026 · Cannes</small></span><span class="amount">1 240,00 €</span></div>
-              <div><span><b>Inès Duval</b><small>Anniversaire · 19/10/2026 · Antibes</small></span><span class="amount">560,00 €</span></div>
-            </div>
-            <div class="row"><span class="mini-title" style="font-size:14px">Devis de Léa, créé tout seul</span><span class="badge">Prêt à envoyer</span></div>
-            <div class="list">
-              <div><span><b>Formule Premium</b><small>Reconnue dans ton catalogue</small></span><span class="amount">690,00 €</span></div>
-              <div><span><b>Livraison</b><small>42 km aller-retour, calculés</small></span><span class="amount">37,80 €</span></div>
-            </div>
+      <div class="p-stage" aria-hidden="true">
+        <div class="p-sheet p-sheet--back"></div>
+        <div class="p-sheet">
+          <div class="p-doc-head">
+            <div><b>AZUR SMILE</b><span>Photobooth · Côte d'Azur</span></div>
+            <div class="p-doc-ref"><span>Devis</span><b>DEV-2026-0041</b></div>
+          </div>
+          <div class="p-doc-meta">
+            <div><span>Client</span><b>Léa Martin</b></div>
+            <div><span>Événement</span><b>Mariage · 12 oct. 2026</b></div>
+            <div><span>Lieu</span><b>Château de Crémat, Nice</b></div>
+          </div>
+          <div class="p-doc-lines">
+            <div><span>Formule Premium<small>3 h · impressions illimitées</small></span><b>690,00 €</b></div>
+            <div><span>Livre d'or photo</span><b>90,00 €</b></div>
+            <div><span>Livraison<small>42 km aller-retour, calculés</small></span><b>37,80 €</b></div>
+          </div>
+          <div class="p-doc-total"><span>Total</span><b>817,80 €</b></div>
+          <div class="p-doc-sign">
+            <svg viewBox="0 0 160 48" class="p-signature"><path d="M6 34c10-14 18-24 24-22 6 2-6 22 0 22 8 0 14-20 20-18 5 2-3 16 3 16 7 0 10-12 16-12 5 0 2 10 8 10 9 0 16-14 24-14 6 0 3 9 10 9 8 0 16-6 30-8"/></svg>
+            <span><b>Léa Martin</b><br>signé en ligne · 14 sept. 2026</span>
+            <span class="p-stamp">Signé</span>
           </div>
         </div>
-        <div class="phone">
-          <div class="phone-notch"></div>
-          <div class="phone-body">
-            <div class="notif"><img src="assets/monogramme.svg" alt=""><div class="n-body"><div class="n-head"><b>Nouvelle demande de devis</b><span class="when">à l'instant</span></div>Léa Martin · Mariage le 12/10 · Nice</div></div>
-            <div class="notif"><img src="assets/monogramme.svg" alt=""><div class="n-body"><div class="n-head"><b>Devis signé</b><span class="when">hier</span></div>Agence Solaris a signé le devis DEV-2026-0041.</div></div>
-            <div class="notif"><img src="assets/monogramme.svg" alt=""><div class="n-body"><div class="n-head"><b>Karim : livré et installé</b><span class="when">16:42</span></div>Mariage Ruiz · Villefranche</div></div>
-          </div>
-        </div>
+        <div class="p-toast p-toast--top"><img src="assets/monogramme.svg" alt=""><div><b>Nouvelle demande</b><span>Léa Martin · Mariage · Nice</span></div><em>à l'instant</em></div>
+        <div class="p-toast p-toast--bottom"><span class="p-dot"></span><div><b>Devis prêt à envoyer</b><span>Brouillon déposé dans ta boîte mail</span></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ CONFIANCE ============ -->
-  <div class="trust">
+  <!-- ============ PREUVES ============ -->
+  <div class="p-facts">
     <div class="wrap">
-      <span><svg class="ic"><use href="#i-shield"/></svg>Factures conformes, format Factur-X</span>
-      <span><svg class="ic"><use href="#i-pen"/></svg>Signature électronique eIDAS</span>
-      <span><svg class="ic"><use href="#i-check"/></svg>Sans engagement, sans commission</span>
-      <span><svg class="ic"><use href="#i-truck"/></svg>Né chez Azur Smile, photobooth sur la Côte d'Azur</span>
+      <p><b>Des centaines de devis</b> déjà préparés chez Azur Smile</p>
+      <p><b>Signature électronique</b> conforme eIDAS</p>
+      <p><b>Factures conformes</b> et prêtes pour 2027</p>
+      <p><b>Sans engagement</b> et sans commission</p>
     </div>
   </div>
 
-  <!-- ============ AVANT / APRÈS ============ -->
-  <section>
+  <!-- ============ PARCOURS ============ -->
+  <section class="p-section">
     <div class="wrap">
-      <div class="section-head center"><h2>Ton administratif, avant et après</h2></div>
-      <div class="compare">
-        <div class="before">
-          <h3>Sans Presmile</h3>
-          <ul>
-            <li>Tu recopies chaque demande dans ton tableur ou ton logiciel</li>
-            <li>Tu cherches tes prix et tu calcules la livraison à la main</li>
-            <li>Tu écris chaque email de devis, puis tu oublies de relancer</li>
-            <li>Tu appelles ton livreur pour lui redonner l'adresse et l'heure</li>
-            <li>Tu te demandes si tes factures sont en règle pour 2027</li>
-          </ul>
-        </div>
-        <div class="after">
-          <h3>Avec Presmile</h3>
-          <ul>
-            <li>La demande arrive toute seule, déjà transformée en devis</li>
-            <li>Formule, options et livraison sont calculées pour toi</li>
-            <li>L'email est prêt dans ta boîte mail, la relance aussi</li>
-            <li>Ton livreur a sa fiche mission et te confirme la livraison</li>
-            <li>Tes factures sont conformes et prêtes pour la réforme</li>
-          </ul>
-        </div>
-      </div>
+      <h2 class="p-title reveal">De la demande à la facture, sans rien ressaisir.</h2>
+      <ol class="p-steps">
+        <li class="reveal"><span class="p-num">01</span><h3>La demande arrive</h3><p>Ton formulaire envoie client, date, lieu et formule à Presmile.</p></li>
+        <li class="reveal"><span class="p-num">02</span><h3>Le devis est prêt</h3><p>Tes prix, tes options, la livraison au kilomètre. L'email t'attend en brouillon.</p></li>
+        <li class="reveal"><span class="p-num">03</span><h3>Le client signe</h3><p>Sur son téléphone, en deux minutes. L'événement se confirme.</p></li>
+        <li class="reveal"><span class="p-num">04</span><h3>La suite se fait seule</h3><p>Relances, acompte, facture de solde, mission du livreur.</p></li>
+      </ol>
     </div>
   </section>
 
-  <!-- ============ 3 BÉNÉFICES ============ -->
-  <section style="padding-top: 0;">
+  <!-- ============ TUILES : CE QUE FAIT PRESMILE ============ -->
+  <section class="p-section p-section--flush">
     <div class="wrap">
-      <div class="section-head center"><span class="eyebrow">Ce que tu y gagnes</span><h2>Moins d'administratif, plus d'événements</h2></div>
-      <div class="benefits">
-        <div class="benefit">
-          <span class="ic-tile"><svg class="ic"><use href="#i-zap"/></svg></span>
-          <h3>Des devis automatiques depuis ton site</h3>
-          <p>Relie ton formulaire (ton site, Tally, Typeform, Zapier, Make) : client, événement et devis se créent seuls, livraison comprise.</p>
-          <a class="more" href="connecter-ton-site.html">Relier ton site <svg class="ic"><use href="#i-arrow"/></svg></a>
-        </div>
-        <div class="benefit">
-          <span class="ic-tile"><svg class="ic"><use href="#i-pen"/></svg></span>
-          <h3>Signés en ligne, relancés sans effort</h3>
-          <p>Ton client signe depuis son téléphone, l'événement se confirme. Sans réponse ? La relance t'attend, prête à partir.</p>
-          <a class="more" href="fonctionnalites.html#f-signature">La signature et les relances <svg class="ic"><use href="#i-arrow"/></svg></a>
-        </div>
-        <div class="benefit">
-          <span class="ic-tile"><svg class="ic"><use href="#i-truck"/></svg></span>
-          <h3>Ton équipe et tes factures en ordre</h3>
-          <p>Une appli pour tes livreurs, prévenus de chaque changement, questionnaire et déroulé du jour J pour tes clients, factures conformes : tout est au même endroit.</p>
-          <a class="more" href="fonctionnalites.html#f-livreurs">Les livreurs et les factures <svg class="ic"><use href="#i-arrow"/></svg></a>
-        </div>
+      <div class="p-bento">
+        <a class="p-tile p-tile--dark p-tile--site reveal" href="connecter-ton-site.html">
+          <div class="p-tile-copy">
+            <p class="p-kicker p-kicker--light">Relier ton site</p>
+            <h3>Ton formulaire, branché en dix minutes.</h3>
+            <p>Ton site, Tally, Typeform, Zapier ou Make. Sans coder, pas-à-pas fourni.</p>
+            <span class="p-go">Voir comment <svg class="ic"><use href="#i-arrow"/></svg></span>
+          </div>
+          <div class="p-mini-flow" aria-hidden="true">
+            <div class="p-mini-form"><span>Nom</span>Léa Martin<span>Formule</span>Premium</div>
+            <div class="p-flow-arrow"><svg class="ic"><use href="#i-arrow"/></svg></div>
+            <div class="p-mini-quote"><span>Devis</span><b>817,80 €</b><em>Prêt à envoyer</em></div>
+          </div>
+        </a>
+
+        <a class="p-tile p-tile--citron p-tile--phone reveal" href="sur-ton-telephone.html">
+          <div class="p-tile-copy">
+            <p class="p-kicker">L'appli sur ton téléphone</p>
+            <h3>Presmile dans ta poche.</h3>
+            <p>S'installe sur l'écran d'accueil de ton iPhone ou Android en 30 secondes, sans passer par un store. Une notification à chaque demande, signature et livraison.</p>
+            <span class="p-go">Comment l'installer <svg class="ic"><use href="#i-arrow"/></svg></span>
+          </div>
+          <div class="p-mini-phone" aria-hidden="true">
+            <div class="notif"><img src="assets/monogramme.svg" alt=""><div class="n-body"><div class="n-head"><b>Nouvelle demande</b><span class="when">à l'instant</span></div>Léa Martin · Mariage · Nice</div></div>
+            <div class="notif"><img src="assets/monogramme.svg" alt=""><div class="n-body"><div class="n-head"><b>Devis signé</b><span class="when">hier</span></div>Agence Solaris · 1 240 €</div></div>
+            <div class="notif"><img src="assets/monogramme.svg" alt=""><div class="n-body"><div class="n-head"><b>Karim : livré</b><span class="when">16:42</span></div>Mariage Ruiz · Villefranche</div></div>
+          </div>
+        </a>
+
+        <a class="p-tile reveal" href="fonctionnalites.html#f-signature">
+          <p class="p-kicker">Signature en ligne</p>
+          <h3>Signé depuis le canapé de ton client.</h3>
+          <span class="p-go">En savoir plus <svg class="ic"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="p-tile reveal" href="fonctionnalites.html#f-relances">
+          <p class="p-kicker">Relances</p>
+          <h3>Plus jamais un devis oublié.</h3>
+          <span class="p-go">En savoir plus <svg class="ic"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="p-tile p-tile--wide reveal" href="facturation-electronique.html">
+          <p class="p-kicker">Facturation électronique</p>
+          <h3><span class="p-date">1<sup>er</sup> sept. 2027</span> Tes factures entre pros deviennent électroniques. Presmile est prêt.</h3>
+          <span class="p-go">Tout comprendre <svg class="ic"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="p-tile p-tile--wide reveal" href="fonctionnalites.html#f-livreurs">
+          <p class="p-kicker">Livreurs et planning</p>
+          <h3>Ton équipe reçoit sa mission, toi la confirmation « livré ».</h3>
+          <span class="p-go">En savoir plus <svg class="ic"><use href="#i-arrow"/></svg></span>
+        </a>
       </div>
-      <p class="also">Et aussi : <a href="fonctionnalites.html#f-metier">réglé pour ton métier</a>, espace client, planning et Google Agenda, matériel, <a href="sur-ton-telephone.html">notifications sur ton téléphone</a>… <a href="fonctionnalites.html">Voir toutes les fonctionnalités</a></p>
+      <p class="p-more reveal"><a class="p-link" href="fonctionnalites.html">Toutes les fonctionnalités <svg class="ic"><use href="#i-arrow"/></svg></a></p>
     </div>
   </section>
 
-  <!-- ============ DÉMARRAGE ============ -->
-  <section style="padding-top: 0;">
+  <!-- ============ FONDATEURS ============ -->
+  <section class="p-section p-section--tight">
     <div class="wrap">
-      <div class="section-head center"><span class="eyebrow">Démarrer</span><h2>Prêt en trois étapes</h2></div>
-      <div class="steps3">
-        <div><span class="dur">1 minute</span><h3>Crée ton compte</h3><p>Ton prénom, ton email, un mot de passe. Pas de carte bancaire.</p></div>
-        <div><span class="dur">Quelques minutes</span><h3>Ajoute tes formules</h3><p>Ton catalogue, ton logo, tes conditions. Relie ton formulaire et ta boîte mail.</p></div>
-        <div><span class="dur">Dès la première demande</span><h3>Reçois tes devis</h3><p>Chaque demande arrive en devis prêt à relire et envoyer.</p></div>
-      </div>
-      <div style="text-align:center; margin-top: 28px;"><a class="btn btn-primary" href="lancement.html">Être prévenu du lancement <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+      <figure class="p-quote reveal">
+        <blockquote>« Presmile est né chez Azur Smile, une entreprise de photobooth sur la Côte d'Azur. Des centaines de devis plus tard, nous l'ouvrons à tous les prestataires de l'événementiel. »</blockquote>
+        <figcaption><img src="assets/monogramme.svg" alt=""><span><b>Ugo Martin et Antoine Longepierre</b>Fondateurs de Presmile</span></figcaption>
+      </figure>
     </div>
   </section>
 
   <!-- ============ PRIX ============ -->
-  <section style="padding-top: 0;">
+  <section class="p-section p-section--tight" id="prix">
     <div class="wrap">
-      <div class="pricebox">
-        <div style="display:grid; gap:14px;">
-          <span class="eyebrow">Tarif</span>
-          <h2 style="font-size: clamp(28px, 3.4vw, 40px);">Tout compris, un seul prix</h2>
-          <ul class="checks">
-            <li>Toutes les fonctions, sans limite de devis, de factures ni de livreurs</li>
-            <li>14 jours gratuits, sans carte bancaire</li>
-            <li>Sans engagement : tu arrêtes quand tu veux</li>
-            <li>Si tu ne t'abonnes pas, rien n'est facturé</li>
-          </ul>
-          <a class="more" href="tarif.html">Voir le détail de tous les frais <svg class="ic"><use href="#i-arrow"/></svg></a>
+      <div class="p-price reveal">
+        <div class="p-price-copy">
+          <p class="p-kicker">Tarif</p>
+          <h2>Un seul prix. Tout compris.</h2>
+          <ul class="p-chips"><li>Sans limite de devis</li><li>0 % de commission</li><li>14 jours d'essai</li><li>Sans engagement</li></ul>
+          <a class="p-link" href="tarif.html">Le détail de tous les frais <svg class="ic"><use href="#i-arrow"/></svg></a>
         </div>
-        <div style="display:grid; gap:12px; justify-items:start;">
-          <div class="price"><b>19</b><span>€ HT / mois</span></div>
-          <span class="per-day">Moins de 0,65 € par jour</span>
-          <span class="muted small">ou 190 € HT / an, deux mois offerts</span>
+        <div class="p-price-box">
+          <div class="p-amount"><b>19 €</b><span>HT / mois</span></div>
+          <p>ou 190 € HT par an, deux mois offerts</p>
           <a class="btn btn-primary btn-block" href="lancement.html">Être prévenu du lancement</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ URGENCE (FACTURATION ÉLECTRONIQUE) ============ -->
-  <section style="padding-top: 0;">
-    <div class="wrap">
-      <div class="urgency">
-        <div style="display:grid; gap:10px;">
-          <h2>1er septembre 2027 : tes factures entre pros devront être électroniques</h2>
-          <p>Prends l'habitude dès maintenant, sans rien changer à ta façon de facturer : Presmile génère le bon format et le transmet pour toi.</p>
-        </div>
-        <a class="btn btn-primary" href="facturation-electronique.html">Tout comprendre en 2 minutes</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ OBJECTIONS ============ -->
-  <section style="padding-top: 0;">
-    <div class="wrap">
-      <div class="section-head center"><h2>Les questions qu'on nous pose</h2></div>
-      <div class="faq">
-        <details><summary>Le devis part tout seul chez mon client ?</summary><p>Non. Le devis est créé tout seul et l'email est rédigé dans ta boîte mail, mais c'est toi qui relis et qui envoies.</p></details>
-        <details><summary>Je dois donner ma carte bancaire pour essayer ?</summary><p>Non. 14 jours pour tout tester avec tes vraies prestas. Tu t'abonnes seulement si Presmile te convient.</p></details>
-        <details><summary>Y a-t-il des frais en plus des 19 € ?</summary><p>Seulement si tu choisis ces options : 2 € HT une seule fois pour activer la facturation électronique, et ta consommation d'IA si tu relies un assistant. Aucune commission sur ton chiffre d'affaires. <a href="tarif.html#frais">Le détail des frais</a></p></details>
-        <details><summary>Mon métier n'est pas le photobooth, ça marche pour moi ?</summary><p>Oui. À l'inscription, tu choisis ton métier : photobooth, photographe, vidéaste, DJ ou musicien, traiteur, décorateur ou fleuriste, wedding planner… Presmile prépare un catalogue de départ, le questionnaire client et le déroulé du jour J adaptés, et tout reste modifiable. <a href="fonctionnalites.html#f-metier">Voir le détail</a></p></details>
-      </div>
-      <p class="also"><a href="questions.html">Toutes les questions</a></p>
-    </div>
-  </section>
-
   <!-- ============ APPEL FINAL ============ -->
-  <section style="padding-top: 0;">
+  <section class="p-section p-section--tight">
     <div class="wrap">
-      <div class="cta-final">
-        <h2>Ta prochaine demande peut déjà arriver en devis</h2>
-        <p>Presmile ouvre bientôt. Laisse ton email : tu seras parmi les premiers à pouvoir l'essayer.</p>
-        <form class="hero-form" data-signup action="lancement.html" style="width:100%;">
+      <div class="cta-final p-final">
+        <h2>Ta prochaine demande peut déjà arriver en devis.</h2>
+        <p>Presmile ouvre bientôt. Laisse ton email : tu seras parmi les premiers à l'essayer. Une question ? <a href="questions.html">Toutes les réponses</a></p>
+        <form class="hero-form p-form" data-signup action="lancement.html">
           <label class="sr-only" for="finalEmail">Ton email</label>
-          <input id="finalEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="Ton email professionnel">
+          <input id="finalEmail" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" placeholder="Ton email professionnel">
           <button class="btn btn-primary" type="submit">Être prévenu</button>
         </form>
       </div>
