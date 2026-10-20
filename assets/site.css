@@ -870,3 +870,8 @@ body.menu-open { overflow: hidden; }
   .p-doc-meta, .p-toast--top { display: none; }
 }
 .p-home footer { margin-top: 0; }
+
+/* Pages légales : sous-titres et listes du texte courant */
+.prose h3 { font-size: 18px; margin-top: 6px; }
+.prose ul { padding-left: 22px; display: grid; gap: 6px; color: var(--ink-2); }
+.prose code { font-size: 13.5px; overflow-wrap: anywhere; }
