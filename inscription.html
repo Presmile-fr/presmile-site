@@ -52,7 +52,7 @@
         <div><i>2</i><span><b>Pendant 14 jours</b><br><span class="muted">Tu testes avec tes vraies prestas. Aucun paiement.</span></span></div>
         <div><i>3</i><span><b id="trialEnd">Fin de l'essai</b><br><span class="muted" id="chargeLine"></span></span></div>
       </div>
-      <p class="muted small">Sans engagement en mensuel, résiliable depuis ton compte. Prix hors taxes. Frais éventuels (facturation électronique, IA) : voir <a href="tarif.html#frais">le détail des frais</a>.</p>
+      <p class="muted small">Sans engagement en mensuel, résiliable depuis ton compte. TVA non applicable, art. 293 B du CGI. Frais éventuels (facturation électronique, IA) : voir <a href="tarif.html#frais">le détail des frais</a>.</p>
     </aside>
   </div>
 </main>
@@ -73,8 +73,8 @@ document.getElementById("trialEnd").textContent = "Le " + end.toLocaleDateString
 function render() {
   document.querySelectorAll("[data-billing]").forEach(b => b.setAttribute("aria-pressed", b.dataset.billing === billing));
   const p = PRICES[billing];
-  document.getElementById("offerPrice").textContent = billing === "yearly" ? `${p} € HT / an` : `${p} € HT / mois`;
-  document.getElementById("chargeLine").textContent = `Si tu continues : ${p} € HT ${billing === "yearly" ? "par an" : "par mois"}. Sinon, rien à faire, ton compte passe simplement en lecture seule.`;
+  document.getElementById("offerPrice").textContent = billing === "yearly" ? `${p} € / an` : `${p} € / mois`;
+  document.getElementById("chargeLine").textContent = `Si tu continues : ${p} € ${billing === "yearly" ? "par an" : "par mois"}. Sinon, rien à faire, ton compte passe simplement en lecture seule.`;
 }
 document.querySelectorAll("[data-billing]").forEach(b => b.addEventListener("click", () => { billing = b.dataset.billing; render(); }));
 render();

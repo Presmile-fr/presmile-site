@@ -44,8 +44,8 @@ document.addEventListener("focusout", () => document.body.classList.remove("typi
 const APP_URL = "https://app.presmile.fr";
 document.querySelectorAll("a[data-app-link]").forEach(a => { a.href = APP_URL + "/"; });
 
-const PRICE = {monthly: {value: "19", unit: "€ HT / mois", note: "Sans engagement, résiliable à tout moment"},
-               yearly: {value: "190", unit: "€ HT / an", note: "Soit 15,83 € HT par mois, deux mois offerts"}};
+const PRICE = {monthly: {value: "19", unit: "€ / mois", note: "Sans engagement, résiliable à tout moment"},
+               yearly: {value: "190", unit: "€ / an", note: "Soit 15,83 € par mois, deux mois offerts"}};
 document.querySelectorAll(".offer-section [data-billing]").forEach(btn => btn.addEventListener("click", () => {
   const p = PRICE[btn.dataset.billing];
   document.querySelectorAll(".offer-section [data-billing]").forEach(b => b.setAttribute("aria-pressed", b === btn));
